@@ -1,14 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import DisplayScreen from './components/DisplayScreen';
-import Keypad from './components/Keypad';
 import Drawer from './components/Drawer';
+import {AppProvider} from './context';
 
 export default function App() {
+  
   return (
     <View style={styles.container}>
-      <DisplayScreen />
-      <Drawer />
+      <AppProvider>
+        <DisplayScreen />
+        <Drawer />
+      </AppProvider>
     </View>
   );
 }
